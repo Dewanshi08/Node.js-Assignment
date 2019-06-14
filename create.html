@@ -7,15 +7,15 @@
 
 <script>
     function validate() {
-        console.log("ahbh");
-        alert("dssd");
-        var checkbox = document.getElementsByName("interest[]").values;
+        var checkbox = document.getElementsByName("interest[]");
         for (var i = 0; i < checkbox.length; i++) {
-            if (checkbox[i] == true) {
+            if (checkbox[i].checked == true) {
+                document.getElementById("submitButton").disabled = false;
                 return true;
             }
         }
-        alert("At least one interest should be selected.");
+        console.log("At least one interest should be selected.");
+        document.getElementById("submitButton").disabled = true;
         return false;
     }
 </script>
@@ -29,7 +29,7 @@
         <input type="email" name="email" id="email" placeholder="Enter your email address">
         <br>
         <label>Phone Number: </label>
-        <input type="number" name="number" placeholder="Enter your phone number">
+        <input type="text" name="number" placeholder="Enter your phone number" pattern="[0-9]{10}">
         <br>
         <label>Designation: </label>
         <input type="text" name="designation" placeholder="Enter your designation">
@@ -39,13 +39,13 @@
         <br>
         <label>Interests: </label>
         <br>
-        <input type="checkbox" name="interest[]" value="counter strike">Counter Strike
+        <input type="checkbox" name="interest[]" value="counter strike" onchange = "validate()">Counter Strike
         <br>
-        <input type="checkbox" name="interest[]" value="coding">Coding
+        <input type="checkbox" name="interest[]" value="coding" onchange = "validate()">Coding
         <br>
-        <input type="checkbox" name="interest[]" value="football">Football
+        <input type="checkbox" name="interest[]" value="football" onchange = "validate()">Football
         <br>
-        <button formaction="/CreateUser" onsubmit="validate()">Create</button>
+        <button id="submitButton" formaction="/CreateUser" disabled>Submit</button>
     </form>
 </body>
 
