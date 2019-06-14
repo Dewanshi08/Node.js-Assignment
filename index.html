@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Node Assignment</title>
+    <style>
+        table,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            border-spacing: 5px 5px;
+        }
+        button{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="get">
+        <table>
+            <tr>
+                <td>
+                    <label>Create a User: </label>
+                </td>
+                <td>
+                    <button formaction="/create">Create</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Edit an User: </label>
+                </td>
+                <td>
+                    <button formaction="/edit">Edit</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Delete an User: </label>
+                </td>
+                <td>
+                    <button formaction="/delete">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>List of people interested in 'Coding': </label>
+                </td>
+                <td>
+                    <button formaction="/interest">Fetch</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Add comments on other users profile:</label>
+                </td>
+                <td>
+                    <button formaction="/add-comment">Add Comment</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Fetch all the comments of a specific user:</label>
+                </td>
+                <td>
+                    <button formaction="/fetch-comment">Fetch Comment</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
